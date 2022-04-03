@@ -20,6 +20,7 @@ sshagent(['rootid']) {
  ssh "scp -o StrictHostKeyChecking=no target/*.war root@192.168.0.73:/opt/tomcat9/webapps/uat.war"
 }
 }
+    /*
     stage('7Deploy Approval'){
     timeout(time:5, unit:'DAYS'){
      input message: 'Please approve deployment to production'
@@ -37,4 +38,6 @@ The job successful
 
 bwalton Team''', recipientProviders: [requestor()], subject: 'project Status', to: 'bwalton@gmail.com'     
 }
+*/
+    
 }
