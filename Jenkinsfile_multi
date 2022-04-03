@@ -12,6 +12,7 @@ node{
     stage('4UploadArtifacts'){
         sh "${mavenHome}/bin/mvn deploy"
 }
+/*
     stage('5Deploy2Tomcat'){
         deploy adapters: [tomcat9(credentialsId: 'tomcatserver', path: '', url: 'http://192.168.0.73:7000/')], contextPath: null, war: 'target/*.war'
 }
@@ -20,7 +21,6 @@ sshagent(['rootid']) {
  ssh "scp -o StrictHostKeyChecking=no target/*.war root@192.168.0.73:/opt/tomcat9/webapps/uat.war"
 }
 }
-    /*
     stage('7Deploy Approval'){
     timeout(time:5, unit:'DAYS'){
      input message: 'Please approve deployment to production'
